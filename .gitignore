@@ -1,3 +1,59 @@
-.vscode
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# Environment variables
 .env
 
+# Venv
+venv/
+ENV/
+env/
+.env/
+.venv/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Coverage
+.coverage
+coverage.xml
+*.cover
+*.log
+htmlcov/
+
+# Django migrations
+*/migrations/*.py
+*/migrations/*.pyc
+*/migrations/__init__.py
+
+# Test and coverage reports
+nosetests.xml
+test_*.xml
+*.coverage
+coverage.xml
+*.cover
+*.log
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Other files
+*.DS_Store
+*.egg-info/
+*.egg
