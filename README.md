@@ -1,0 +1,1 @@
+# aitool-detail-service
