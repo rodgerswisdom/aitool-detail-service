@@ -1,0 +1,22 @@
+databases:
+  - name: tool_servicedb
+    plan: free
+    databaseName: tool_service
+    user: tool_service
+
+services:
+  - type: web
+    plan: free
+    name: tool_service
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "python -m gunicorn tool_service.asgi:application -k uvicorn.workers.UvicornWorker"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tool_servicedb
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
