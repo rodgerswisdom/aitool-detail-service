@@ -28,7 +28,13 @@ SECRET_KEY = 'django-insecure-_!c4&%oi8d$jl+#sbxgc=$#2l^#gl64v#ti%ianxk*n&lv!0vu
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['http://127.0.0.1:8000','aitool-detail-service.onrender.com','.onrender.com','https://tool-service.onrender.com']
+# https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = []
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+# ALLOWED_HOSTS = ['http://127.0.0.1:8000','aitool-detail-service.onrender.com','.onrender.com','https://tool-service.onrender.com','localhost']
 
 
 # Application definition
