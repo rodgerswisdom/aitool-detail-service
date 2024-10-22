@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-_!c4&%oi8d$jl+#sbxgc=$#2l^#gl64v#ti%ianxk*n&lv!0vu
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', 'http://127.0.0.1:8000','aitool-detail-service.onrender.com']
+ALLOWED_HOSTS = ['http://127.0.0.1:8000','aitool-service.onrender.com']
 
 
 # Application definition
