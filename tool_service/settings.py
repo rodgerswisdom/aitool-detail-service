@@ -96,8 +96,8 @@ WSGI_APPLICATION = 'tool_service.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        # default='postgresql://postgres:postgres@localhost:5432/tool_service',
-        default='postgres://postgres:postgres@localhost:5432/tool_service_db',
+        default='postgresql://postgres:postgres@localhost:5432/tool_service',
+        # default='postgres://postgres:postgres@localhost:5432/tool_service_db',
         conn_max_age=600
     )
 }
@@ -144,7 +144,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'http://127.0.0.1:8001')
+# CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'http://127.0.0.1:8001')
+CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'http://localhost:8001/')
 
 
 STATICFILES_DIRS = [BASE_DIR/'static',]
