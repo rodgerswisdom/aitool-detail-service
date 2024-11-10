@@ -25,7 +25,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = []
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -156,7 +156,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'http://127.0.0.1:8001')
-CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'http://localhost:8001/')
+CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'https://category-service-3t5x.onrender.com')
 
 
 STATICFILES_DIRS = [BASE_DIR/'static',]
