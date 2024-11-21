@@ -108,8 +108,9 @@ DATABASES = {
         # Replace this value with your local database's connection string.
         # default='postgresql://postgres:postgres@localhost:5432/tool_service',
         # default='postgres://postgres:postgres@localhost:5432/tool_service_db',
-        default='postgresql://tool_service:aijTGjtjVhSnj0WhTZAy3MhEVSH87NIW@dpg-csbqt7btq21c73a6fit0-a.oregon-postgres.render.com/tool_service',
-        conn_max_age=600
+       # default='postgresql://tool_service:aijTGjtjVhSnj0WhTZAy3MhEVSH87NIW@dpg-csbqt7btq21c73a6fit0-a.oregon-postgres.render.com/tool_service',
+       default = 'postgresql://neondb_owner:u9eQLGR8xYSD@ep-lingering-dawn-a5oiytlk.us-east-2.aws.neon.tech/neondb?sslmode=require',
+       conn_max_age=600
     )
 }
 
