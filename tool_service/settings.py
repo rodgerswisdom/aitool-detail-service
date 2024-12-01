@@ -25,7 +25,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = []
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
