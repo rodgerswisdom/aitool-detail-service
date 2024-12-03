@@ -15,7 +15,7 @@ static/
 
 # Environment variables
 .env
-
+.run.sh
 # Venv
 venv/
 ENV/

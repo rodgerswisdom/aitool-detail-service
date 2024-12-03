@@ -1,3 +1,7 @@
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie, vary_on_headers
+
 import requests
 from django.shortcuts import render
 from rest_framework import viewsets
@@ -9,7 +13,9 @@ from django.http import JsonResponse
 class ToolViewSet(viewsets.ModelViewSet):
     queryset = Tool.objects.all()
     serializer_class = ToolSerializer
-
+    
+    @method_decorator(cache_page(60 * 60 * 2))
+    @method_decorator(vary_on_cookie)
     def retrieve(self, request, *args, **kwargs):
         tool = self.get_object()
         category_api_url = f'{settings.CATEGORY_SERVICE_URL}/api/categories/{tool.category_id}/'
