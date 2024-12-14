@@ -1,5 +1,3 @@
-# versel.json
-
 {
   "version": 2,
   "builds": [
@@ -9,7 +7,7 @@
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     },
     {
-      "src": "build.sh",
+      "src": "build_files.sh",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "staticfiles"
@@ -25,7 +23,6 @@
       "src": "/(.*)",
       "dest": "tool_service/wsgi.py"
     }
-  ],
-  "outputDirectory": "/staticfiles"
+  ]
 }
 
