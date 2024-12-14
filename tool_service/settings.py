@@ -27,9 +27,9 @@ DEBUG = True
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1', '.vercel.app']
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+#RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+#if RENDER_EXTERNAL_HOSTNAME:
+    #    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 # ALLOWED_HOSTS = ['http://127.0.0.1:8000','aitool-detail-service.onrender.com','.onrender.com','https://tool-service.onrender.com','localhost']
 
 
