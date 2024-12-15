@@ -9,16 +9,16 @@ from .models import Tool
 from .serializers import ToolSerializer
 from django.conf import settings
 from django.http import JsonResponse
-from rest_framework.pagination import LimitOffsetPagination
+# from rest_framework.pagination import LimitOffsetPagination
 
-class ToolPagination(LimitOffsetPagination):
-    default_limit = 50  # Default items per page
-    max_limit = 100
+# class ToolPagination(LimitOffsetPagination):
+   # default_limit = 50  # Default items per page
+   # max_limit = 100
 
 class ToolViewSet(viewsets.ModelViewSet):
     queryset = Tool.objects.all()
     serializer_class = ToolSerializer
-    pagination_class = ToolPagination
+    # pagination_class = ToolPagination
 
     @method_decorator(cache_page(60 * 60 * 2))
     @method_decorator(vary_on_cookie)

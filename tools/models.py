@@ -5,7 +5,7 @@ class Tool(models.Model):
     description = models.TextField()
     website_link = models.TextField(null=True)
     youtube_link = models.TextField(null=True)
-    category_id = models.IntegerField(null=True)
+    category_id = models.IntegerField(null=True, default=50)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

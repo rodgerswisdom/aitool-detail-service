@@ -156,8 +156,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'http://127.0.0.1:8001')
-CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'https://category-service-3t5x.onrender.com')
+#CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'http://127.0.0.1:8001')
+CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'https://aitools-category-service.vercel.app')
 
 
 STATICFILES_DIRS = [BASE_DIR/'static',]
