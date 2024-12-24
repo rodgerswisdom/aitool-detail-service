@@ -163,7 +163,10 @@ CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'https://aitools-catego
 STATIC_URL = '/static/'
 
 # The directory where collectstatic will collect static files for production
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Enable WhiteNoise to serve static files in production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
