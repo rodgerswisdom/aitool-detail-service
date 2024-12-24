@@ -159,16 +159,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'http://127.0.0.1:8001')
 CATEGORY_SERVICE_URL = os.getenv('CATEGORY_SERVICE_URL', 'https://aitools-category-service.vercel.app')
 
-
-STATICFILES_DIRS = [BASE_DIR/'static',]
-STATIC_ROOT = BASE_DIR/'staticfiles'
-
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-
-# This setting informs Django of the URI path from which your static files will be served to users
-# Here, they well be accessible at your-domain.onrender.com/static/... or yourcustomdomain.com/static/...
 STATIC_URL = '/static/'
+
+# The directory where collectstatic will collect static files for production
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Enable WhiteNoise to serve static files in production
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
 """
