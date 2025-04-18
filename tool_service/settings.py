@@ -25,7 +25,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = []
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1', '.vercel.app', '.netlify.app']
 
 #RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 #if RENDER_EXTERNAL_HOSTNAME:
@@ -64,6 +64,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",  # Add this if you use 'localhost' instead of '127.0.0.1'
+    ".vercel.app",
+    ".netlify.app",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
