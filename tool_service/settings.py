@@ -23,9 +23,9 @@ SECRET_KEY = 'django-insecure-_!c4&%oi8d$jl+#sbxgc=$#2l^#gl64v#ti%ianxk*n&lv!0vu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1', '.vercel.app', '.netlify.app']
+# ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1', '.vercel.app', '.netlify.app']
 
 #RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 #if RENDER_EXTERNAL_HOSTNAME:
@@ -64,8 +64,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",  # Add this if you use 'localhost' instead of '127.0.0.1'
-    ".vercel.app",
-    ".netlify.app",
+   # ".vercel.app",
+  #  ".netlify.app",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -109,10 +109,7 @@ DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
         # default='postgresql://postgres:postgres@localhost:5432/tool_service',
-        # default='postgres://postgres:postgres@localhost:5432/tool_service_db',
-       # default='postgresql://tool_service:aijTGjtjVhSnj0WhTZAy3MhEVSH87NIW@dpg-csbqt7btq21c73a6fit0-a.oregon-postgres.render.com/tool_service',
-       default = 'postgresql://neondb_owner:u9eQLGR8xYSD@ep-lingering-dawn-a5oiytlk.us-east-2.aws.neon.tech/neondb?sslmode=require',
-       conn_max_age=600
+        default='postgres://admin:1234@localhost:5432/tool_service_db',
     )
 }
 
@@ -202,5 +199,14 @@ REFACTORING ADMIN STYLES
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 50,  # Default page size
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'tools.authentication.SimpleTokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
 
+GATEKEEPER_EMAIL = os.getenv('GATEKEEPER_EMAIL', 'consultant@example.com')
+GATEKEEPER_PASSWORD = os.getenv('GATEKEEPER_PASSWORD', 'change-me')
+GATEKEEPER_TOKEN = os.getenv('GATEKEEPER_TOKEN', 'replace-me-with-a-long-token')
